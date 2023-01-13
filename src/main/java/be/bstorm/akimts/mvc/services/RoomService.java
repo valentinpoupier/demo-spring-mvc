@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 @Service
 public class RoomService {
@@ -35,5 +33,27 @@ public class RoomService {
                 .filter( room -> room.getNumRoom() == numRoom )
                 .findFirst()
                 .orElseThrow( () -> new RuntimeException("Pas de chambre avec ce numéro") );
+    }
+
+    public void insert(Room room){
+        if(
+            room.getNumRoom() <= 0 ||
+            room.getNbrSimpleBed() < 0 ||
+            room.getNbrDoubleBed() < 0 ||
+            room.getSize() < 0
+        ) throw new RuntimeException("valeur invalide");
+
+        rooms.add(room);
+    }
+
+    public void update(int num, Room room){
+        if( room.getNbrSimpleBed() < 0 || room.getNbrDoubleBed() < 0 || room.getSize() < 0 )
+            throw new RuntimeException("valeur invalide");
+
+        Room toUpdate = getOne(num);
+
+        toUpdate.setNbrSimpleBed( room.getNbrSimpleBed() );
+        toUpdate.setNbrDoubleBed( room.getNbrDoubleBed() );
+        toUpdate.setSize( room.getSize() );
     }
 }
