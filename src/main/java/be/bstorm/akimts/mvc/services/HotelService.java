@@ -85,6 +85,7 @@ public class HotelService {
                         .receptionist(form.getReceptionist())
                         .address(form.getAddress())
                         .name(form.getName())
+                        .rooms(new ArrayList<>())
                         .build()
         );
     }
