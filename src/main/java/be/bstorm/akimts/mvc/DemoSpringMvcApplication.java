@@ -1,6 +1,6 @@
 package be.bstorm.akimts.mvc;
 
-import be.bstorm.akimts.mvc.patterns.Personne;
+import be.bstorm.akimts.mvc.patterns.Perso;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,7 +11,7 @@ public class DemoSpringMvcApplication {
 		SpringApplication.run(DemoSpringMvcApplication.class, args);
 
 
-		Personne p = Personne.builder("luc")
+		Perso p = Perso.builder("luc")
 				.nom("dubois")
 				.build();
 	}

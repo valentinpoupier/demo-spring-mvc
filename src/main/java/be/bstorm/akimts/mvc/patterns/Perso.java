@@ -3,12 +3,12 @@ package be.bstorm.akimts.mvc.patterns;
 import lombok.Data;
 
 @Data
-public class Personne {
+public class Perso {
 
     private String prenom;
     private String nom;
 
-    private Personne(String prenom, String nom){
+    private Perso(String prenom, String nom){
         this.prenom = prenom;
         this.nom = nom;
     }
@@ -31,8 +31,8 @@ public class Personne {
             return this;
         }
 
-        public Personne build(){
-            return new Personne(this.prenom, this.nom);
+        public Perso build(){
+            return new Perso(this.prenom, this.nom);
         }
 
     }

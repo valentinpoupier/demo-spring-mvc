@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="calcul" method="post" th:object="${calcul}">
+    <div>
+        <label for="nbr1">Nombre 1</label>
+        <input type="number" id="nbr1" th:field="*{nb1}">
+    </div>
+    <div>
+        <label for="op"> opération (+,-,*,/,%)</label>
+        <input type="text" id="op" th:field="*{op}">
+    </div>
+    <div>
+        <label for="nbr2">Nombre 2</label>
+        <input type="number" id="nbr2" th:field="*{nb2}">
+    </div>
+    <div>
+        <label for="reponse">Réponse</label>
+        <input type="number" disabled th:value="*{reponse}" id="reponse">
+    </div>
+    <button type="submit">réponse</button>
+</form>
+
+</body>
+</html>
