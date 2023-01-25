@@ -1,11 +1,7 @@
 package be.bstorm.akimts.mvc.services;
 
-import be.bstorm.akimts.mvc.models.Personne;
+import be.bstorm.akimts.mvc.patterns.Personne;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 @Service
 public class PersonneService {

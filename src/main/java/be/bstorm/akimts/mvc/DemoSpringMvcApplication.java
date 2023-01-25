@@ -1,19 +1,16 @@
 package be.bstorm.akimts.mvc;
 
-import be.bstorm.akimts.mvc.patterns.Perso;
+import be.bstorm.akimts.mvc.utils.EMFSharer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class DemoSpringMvcApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringMvcApplication.class, args);
+		ApplicationContext ctxt = SpringApplication.run(DemoSpringMvcApplication.class, args);
 
-
-		Perso p = Perso.builder("luc")
-				.nom("dubois")
-				.build();
+		ctxt.getBean(EMFSharer.class).close();
 	}
-
 }

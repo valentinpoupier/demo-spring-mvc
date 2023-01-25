@@ -1,7 +1,7 @@
 package be.bstorm.akimts.mvc.services;
 
 import be.bstorm.akimts.mvc.models.Hotel;
-import be.bstorm.akimts.mvc.models.HotelForm;
+import be.bstorm.akimts.mvc.models.form.HotelForm;
 import be.bstorm.akimts.mvc.models.Room;
 import org.springframework.stereotype.Service;
 
@@ -85,7 +85,6 @@ public class HotelService {
                         .receptionist(form.getReceptionist())
                         .address(form.getAddress())
                         .name(form.getName())
-                        .rooms(new ArrayList<>())
                         .build()
         );
     }
